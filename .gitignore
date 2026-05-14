@@ -1,0 +1,98 @@
+# =============================================================================
+# LATO public release allow-list
+#
+# This repository is intended to publish only the 512-resolution VAE inference
+# path. Everything is ignored by default, then the files required by inference
+# are explicitly allowed below.
+# =============================================================================
+
+# Ignore everything first.
+*
+
+# Keep directory traversal available for allow-list rules.
+!*/
+
+# Root metadata and documentation.
+!/.gitignore
+!/README.md
+!/requirements.txt
+!/LICENSE
+!/LICENSE.*
+
+# Public teaser image used by README.
+!/assert/
+!/assert/docs/
+!/assert/docs/teaser.png
+
+# Public 512 VAE inference entry and config.
+!/scripts/
+!/scripts/infer_vae_512.py
+!/configs/
+!/configs/infer_vae_512.yaml
+
+# Shared root-level inference dependencies.
+!/vertex_encoder.py
+!/utils.py
+
+# LATO package code required by the 512 VAE inference path.
+!/lato/
+!/lato/**
+
+# =============================================================================
+# Always ignore generated/local artifacts, even inside allowed directories.
+# =============================================================================
+
+# Python caches / build outputs.
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# Native / compiled artifacts.
+*.so
+*.dylib
+*.dll
+
+# Environments and local secrets.
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Checkpoints, downloaded weights, generated outputs.
+checkpoints/
+ckpts/
+outputs/
+output/
+eval/
+dataset_cache/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+
+# Large/generated 3D outputs.
+*.ply
+*.glb
+*.gltf
+*.obj
+!assert/docs/teaser.png
+
+# IDE / OS noise.
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+.ipynb_checkpoints/

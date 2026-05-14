@@ -1,0 +1,25 @@
+# LATO 512 VAE inference environment.
+# Reference environment:
+#   Python 3.10.20
+#   CUDA 11.8
+#   PyTorch 2.4.0
+#
+# flash-attn must be installed separately with:
+#   pip install flash-attn==2.6.3 --no-build-isolation
+
+--extra-index-url https://download.pytorch.org/whl/cu118
+--find-links https://data.pyg.org/whl/torch-2.4.0+cu118.html
+
+torch==2.4.0+cu118
+torchvision==0.19.0+cu118
+spconv-cu118==2.3.8
+torch-scatter==2.1.2+pt24cu118
+
+numpy==2.2.6
+PyYAML==6.0.3
+networkx==3.4.2
+trimesh==4.12.2
+open3d==0.19.0
+huggingface-hub==1.14.0
+
+easydict==1.13

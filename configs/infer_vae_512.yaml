@@ -1,0 +1,32 @@
+dataset:
+  renders_dir: null
+  base_resolution: 512
+  min_resolution: 128
+  sample_type: dora
+model:
+  pred_direction: false
+  using_attn: false
+  in_channels: 1024
+  latent_dim: 16
+  attn_first: false
+  encoder_blocks:
+  - in_channels: 1024
+    model_channels: 512
+    num_blocks: 8
+    num_heads: 8
+    out_channels: 512
+  decoder_blocks_vtx:
+  - in_channels: 1024
+    model_channels: 768
+    context_channels: 512
+    num_blocks: 4
+    num_heads: 8
+    out_channels: 768
+    resolution: 128
+  - in_channels: 768
+    model_channels: 512
+    context_channels: 512
+    num_blocks: 4
+    num_heads: 8
+    out_channels: 512
+    resolution: 256
