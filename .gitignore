@@ -23,6 +23,8 @@
 !/assert/
 !/assert/docs/
 !/assert/docs/teaser.png
+!/assert/sample/
+!/assert/sample/**
 
 # Public 512 VAE inference entry and config.
 !/scripts/
@@ -87,6 +89,7 @@ dataset_cache/
 *.gltf
 *.obj
 !assert/docs/teaser.png
+!assert/sample/**
 
 # IDE / OS noise.
 .DS_Store
