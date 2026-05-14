@@ -70,8 +70,7 @@ Download the released LATO 512 VAE checkpoint from [Hugging Face](https://huggin
 ```bash
 hf download udbbdh/LATO \
   checkpoints/128to512/vae/vae_128to512.pt \
-  --local-dir . \
-  --local-dir-use-symlinks False
+  --local-dir . 
 ```
 
 
@@ -80,7 +79,7 @@ Basic reconstruction can be:
 ```bash
 python scripts/infer_vae_512.py \
   --mesh assert/sample/test.obj \
-  --checkpoint checkpoints/lato-vae-512/lato_vae_512.pt \
+  --checkpoint checkpoints/128to512/vae/vae_128to512.pt \
   --config configs/infer_vae_512.yaml \
   --output outputs
 ```
